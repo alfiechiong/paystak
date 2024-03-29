@@ -1,95 +1,54 @@
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+    <main
+      className={styles.main}
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        fontSize: "24px", // Increase font size to make it bigger
+      }}
+    >
+      <h1>PAYSTAK</h1>
+      <div></div>
+      <div className={styles.searchContainer}></div>
+      <input
+        type="email" // Change input type to "email"
+        placeholder="Email" // Change placeholder to "Email"
+        className={styles.searchInput}
+        style={{
+          width: "40vh", // Set width to 20vh
+          height: "50px", // Set height to 20px
+          borderRadius: "10px", // Set border radius to 10px
+          fontSize: "24px", // Set font size to 24px
+          padding: "10px", // Set padding to 10px
+          marginBottom: "20px", // Set margin bottom to 20px
+        }}
+      />
+      <button
+        onClick={() => router.push("login")}
+        className={styles.searchButton}
+        style={{
+          width: "40vh", // Set width to 40vh
+          height: "50px", // Set height to 50px
+          background: "linear-gradient(to right, lightblue, lightblue)", // Add gradient light blue background
+          borderRadius: "10px", // Set border radius to 10px
+          color: "white", // Set text color to white
+          border: "none", // Remove border
+          outline: "none", // Remove outline
+          fontSize: "24px", // Set font size to 24px
+          cursor: "pointer", // Add pointer cursor
+          transition: "all 0.3s", // Add transition effect
+        }}
+      >
+        🔐 Login
+      </button>
     </main>
   );
 }
